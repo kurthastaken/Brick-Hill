@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brick Hill installation, configuration, architecture and API documentation.">
+  <meta name="theme-color" content="#111827">
+  <title>Brick Hill Docs</title>
+  <link rel="icon" href="/images/logos/bh_icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/home" aria-label="Brick Hill Docs - Home">
+      <span class="brand-mark"><img src="/images/logos/bh_icon.png" alt=""></span>
+      <span>Brick Hill <b>Docs</b></span>
+    </a>
+
+    <button class="search-trigger" id="searchTrigger" type="button" aria-label="Search the documentation">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+      <span>Search the documentation</span>
+      <kbd>Ctrl K</kbd>
+    </button>
+
+    <nav class="top-actions" aria-label="Actions">
+      <a class="source-link" href="https://gitlab.com/idkhowtowhistlx/brick-hill" target="_blank" rel="noreferrer" aria-label="Source code on GitLab">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22.65 14.39 12 22.13 1.35 14.39a.86.86 0 0 1-.3-.96l1.22-3.76 2.44-7.5a.43.43 0 0 1 .82 0l2.44 7.5h8.06l2.44-7.5a.43.43 0 0 1 .82 0l2.44 7.5 1.22 3.76a.86.86 0 0 1-.3.96ZM12 20.5l4.03-10.83H7.97L12 20.5Z"/></svg>
+      </a>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Switch theme">
+        <svg class="sun-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        <svg class="moon-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+      </button>
+      <button class="menu-button" id="menuButton" type="button" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="docs-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-scroll">
+        <nav id="sidebarNav" aria-label="Documentation"></nav>
+        <footer class="sidebar-footer">
+          <span>Based on the Laravel 8 project</span>
+          <span>AGPL-3.0-or-later</span>
+        </footer>
+      </div>
+    </aside>
+
+    <main class="main-content" id="mainContent" tabindex="-1">
+      <article class="doc-article" id="docArticle"></article>
+      <nav class="page-nav" id="pageNav" aria-label="Page navigation"></nav>
+    </main>
+
+    <aside class="toc-panel">
+      <div class="toc-sticky">
+        <p>On this page</p>
+        <nav id="tocNav" aria-label="Table of contents"></nav>
+      </div>
+    </aside>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <dialog class="search-dialog" id="searchDialog">
+    <div class="search-box">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+      <input id="searchInput" type="search" placeholder="Search guides, settings and endpoints…" autocomplete="off">
+      <button id="searchClose" type="button">Esc</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-hint"><span>↑↓ navigate</span><span>↵ open</span><span>Esc close</span></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Code copied</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
